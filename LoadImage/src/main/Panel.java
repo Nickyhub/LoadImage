@@ -38,14 +38,20 @@ public class Panel extends JPanel {
 		} else if (mode == 1) {
 
 			g2d.drawImage(Window.image, 0, 0, null);
-			if (!drawn) {
-				for (int y = 0; y < secondImage.getHeight(); y++) {
-					for (int x = 0; x < secondImage.getWidth(); x++) {
-						secondImage.setRGB(x, y, secondImage.getRGB(x, y) + Color.MAGENTA.getRGB());
-					}
-				}
-			}
-			g2d.drawImage(secondImage, 0, Window.image.getHeight(), null);
+			
+			//Bild hässlich magenta färben
+//			if (!drawn) {
+//				for (int y = 0; y < secondImage.getHeight(); y++) {
+//					for (int x = 0; x < secondImage.getWidth(); x++) {
+//						secondImage.setRGB(x, y, secondImage.getRGB(x, y) + Color.MAGENTA.getRGB());
+//					}
+//				}
+//			}
+//			g2d.drawImage(secondImage, 0, Window.image.getHeight(), null);
+			
+			//einfach nur magenta rechteck
+			g2d.setColor(Color.MAGENTA);
+			g2d.fillRect(0,  Window.image.getHeight(),  Window.image.getWidth(),  Window.image.getHeight());
 			drawn = true;
 
 		}
